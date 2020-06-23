@@ -21,7 +21,7 @@ export default function Index({ data, headerData, preview }) {
   );
 }
 
-export async function getStaticProps({ preview = null }) {
+export async function getServerSideProps() {
   const data = await getData("home");
   const headerData = await getData("header");
 

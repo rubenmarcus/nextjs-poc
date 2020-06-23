@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic'
 
 const DynamicComponentWithNoSSR = dynamic(() => import('../../components/redoc'), {
-  ssr: false
+  ssr: true
 })
 
 export default () => <DynamicComponentWithNoSSR />
