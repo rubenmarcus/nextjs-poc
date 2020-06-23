@@ -30,7 +30,7 @@ info:
     And that allows cross-domain communication from the browser.
     All responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.
 
-    # Authenticação
+    # Authenticação eeeeeeeeeeee
 
     Itaú para Developers offers two forms of authentication:
       - API Key
