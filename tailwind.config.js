@@ -1,10 +1,35 @@
 module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
+  corePlugins: {
+    container: false
+  },
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          margin: '0px auto',
+          '@screen sm': {
+            maxWidth: '600px',
+          },
+          '@screen md': {
+            maxWidth: '700px',
+          },
+          '@screen lg': {
+            maxWidth: '800px',
+          },
+          '@screen xl': {
+            maxWidth: '990px'
+          },
+        }
+      })
+    }
+  ],
   theme: {
     extend: {
       fontFamily: {
         sans:
-          '-apple-system, "Helvetica Neue", "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+          '"Itau-Display",sans-serif',
       },
       colors: {
         'accent-1': '#FAFAFA',
@@ -12,6 +37,13 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
+        itau: {
+          orange: '#EC7000',
+          orangedark: '#ce6609',
+          grey: '#605751',
+          border: '#e7e7e7',
+          lightbrown: '#EFE9E5',
+        }
       },
       spacing: {
         28: '7rem',

@@ -2,40 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Itau-Icons";
+  src: url(/fonts/hinted-itau/fonts_master_24px_v1.woff) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-Display;
+  src: url(/fonts/ItauDisplay-Black.woff2) format("woff2"),
+    url(/fonts/ItauDisplay-Black.woff) format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-Display;
+  src: url(/fonts/ItauDisplay-Light.woff2) format("woff2"),
+    url(/fonts/ItauDisplay-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-Text;
+  src: url(/fonts/ItauText-Bold.woff2) format("woff2"),
+    url(/fonts/ItauText-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-Display;
+  src: url(/fonts/ItauDisplay-Heavy.woff2) format("woff2"),
+    url(/fonts/ItauDisplay-Heavy.woff) format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-Display;
+  src: url(/fonts/ItauDisplay-Regular.woff2) format("woff2"),
+    url(/fonts/ItauDisplay-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-Text;
+  src: url(/fonts/ItauText-Regular.woff2) format("woff2"),
+    url(/fonts/ItauText-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-Text;
+  src: url(/fonts/ItauText-Light.woff2) format("woff2"),
+    url(/fonts/ItauText-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: ItauDisplay;
+  src: url(/fonts/ItauDisplay-Bold.woff2) format("woff2"),
+    url(/fonts/ItauDisplay-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-DisplayXBold;
+  src: url(/fonts/ItauDisplay-XBold.woff2) format("woff2"),
+    url(/fonts/ItauDisplay-XBold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Itau-TextXBold;
+  src: url(/fonts/ItauText-XBold.woff2) format("woff2"),
+    url(/fonts/ItauText-XBold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: HintedItau/fonts;
+  src: url(/fonts/hinted-itau/fonts_master_24px_v1.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 .grayscale {
   filter: grayscale(1);
 }
 
-
-.redoc-wrap .menu-content div a img{
-width:120px;
-padding:20px;
+.redoc-wrap .menu-content div a img {
+  width: 120px;
+  padding: 20px;
 }
-
 
 .accordion-content {
   max-height: 0;
-  -webkit-transition: max-height .35s;
-  -o-transition: max-height .35s;
-  transition: max-height .35s;
-  }
-  /* :checked - resize to full height */
-  .accordion input:checked ~ .accordion-content {
+  -webkit-transition: max-height 0.35s;
+  -o-transition: max-height 0.35s;
+  transition: max-height 0.35s;
+}
+/* :checked - resize to full height */
+.accordion input:checked ~ .accordion-content {
   max-height: 100vh;
-  }
-  /* Label formatting when open */
-  .accordion input:checked + label{
+}
+/* Label formatting when open */
+.accordion input:checked + label {
   /*@apply text-xl p-5 border-l-2 border-indigo-500 bg-gray-100 text-indigo*/
   font-size: 1.25rem; /*.text-xl*/
   padding: 1.25rem; /*.p-5*/
   border-left-width: 2px; /*.border-l-2*/
-  border-color: #6574cd; /*.border-indigo*/
+  border-color: #ec7000; /*.border-indigo*/
   background-color: #f8fafc; /*.bg-gray-100 */
-  color: #6574cd; /*.text-indigo*/
-  }
-  /* Icon */
-  .accordion label::after {
-  float:right;
+  color: #ec7000; /*.text-indigo*/
+}
+/* Icon */
+.accordion label::after {
+  float: right;
   right: 0;
   top: 0;
   display: block;
@@ -44,33 +125,76 @@ padding:20px;
   line-height: 1.5;
   font-size: 1.25rem;
   text-align: center;
-  -webkit-transition: all .35s;
-  -o-transition: all .35s;
-  transition: all .35s;
-  }
-  /* Icon formatting - closed */
-  .accordion input[type=checkbox] + label::after {
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+/* Icon formatting - closed */
+.accordion input[type="checkbox"] + label::after {
   content: "+";
-  font-weight:bold; /*.font-bold*/
+  font-weight: bold; /*.font-bold*/
   border-width: 1px; /*.border*/
   border-radius: 9999px; /*.rounded-full */
   border-color: #b8c2cc; /*.border-grey*/
-  }
-  .accordion input[type=radio] + label::after {
+}
+.accordion input[type="radio"] + label::after {
   content: "\25BE";
-  font-weight:bold; /*.font-bold*/
+  font-weight: bold; /*.font-bold*/
   border-width: 1px; /*.border*/
   border-radius: 9999px; /*.rounded-full */
   border-color: #b8c2cc; /*.border-grey*/
-  }
-  /* Icon formatting - open */
-  .accordion input[type=checkbox]:checked + label::after {
+}
+/* Icon formatting - open */
+.accordion input[type="checkbox"]:checked + label::after {
   transform: rotate(315deg);
-  background-color: #6574cd; /*.bg-indigo*/
+  background-color: #ec7000; /*.bg-indigo*/
   color: #f8fafc; /*.text-grey-lightest*/
-  }
-  .accordion input[type=radio]:checked + label::after {
+}
+.accordion input[type="radio"]:checked + label::after {
   transform: rotateX(180deg);
-  background-color: #6574cd; /*.bg-indigo*/
+  background-color: #ec7000; /*.bg-indigo*/
   color: #f8fafc; /*.text-grey-lightest*/
-  }
+}
+
+header nav ul li:last-child {
+  margin-left: auto;
+}
+
+header {
+  z-index: 999;
+}
+header .container {
+  height: 66px;
+}
+
+header nav ul li:after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  width: 0;
+  opacity: 0;
+  height: 4px;
+  background: #ec7000;
+  transition: all 0.35s;
+  margin-top: 42px;
+  width: 53px;
+  margin-left: -39px;
+}
+
+header nav ul li:hover:after {
+  width: 5rem;
+  opacity: 1;
+  background: #ec7000;
+}
+.bg-itau-lightblue {
+  background: linear-gradient(180deg, #00306b, #939393);
+}
+
+.duvidas a {
+  color: #ec7000;
+  font-weight: bold;
+}
+.start h4{
+  font-weight: bold;
+  font-size:1.35rem
+}
