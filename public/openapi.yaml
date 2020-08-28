@@ -8,7 +8,6 @@ securitySchemes:
         scopes: {}
         authorizationUrl: https://oauthd.wonka/identity/connect/accesstokenvalidation?token=:access_token
         tokenUrl: https://oauthd.wonka/identity/connect/token
-x-metadata0: "./metadata/metadata0.yaml"
 servers:
 - url: https://api.wonka.com.br/biscoitos/v3
 info:
