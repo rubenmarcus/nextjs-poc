@@ -1,4 +1,3 @@
----
 openapi: 3.0.0
 paths:
   "/biscoitos":
@@ -16618,8 +16617,6 @@ components:
     oauth_2_0:
       type: oauth2
       description: 'Modelo de segurança aplicado a API.
-
-'
       flows:
         clientCredentials:
           scopes: {}
