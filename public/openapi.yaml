@@ -1,4 +1,22 @@
 openapi: 3.0.0
+securitySchemes:
+  oauth_2_0:
+    type: oauth2
+    description: 'Modelo de segurança aplicado a API.'
+    flows:
+      clientCredentials:
+        scopes: {}
+        authorizationUrl: https://oauthd.wonka/identity/connect/accesstokenvalidation?token=:access_token
+        tokenUrl: https://oauthd.wonka/identity/connect/token
+x-metadata0: "./metadata/metadata0.yaml"
+servers:
+- url: https://api.wonka.com.br/biscoitos/v3
+info:
+title: biscoitos
+version: 1.0.1
+description: API de biscoitos
+x-metadata0:
+"$ref": "#/components/x-metadata0"
 paths:
   "/biscoitos":
     get:
@@ -16613,21 +16631,3 @@ components:
                 type: string
             required: []
       required: []
-  securitySchemes:
-    oauth_2_0:
-      type: oauth2
-      description: 'Modelo de segurança aplicado a API.
-      flows:
-        clientCredentials:
-          scopes: {}
-          authorizationUrl: https://oauthd.wonka/identity/connect/accesstokenvalidation?token=:access_token
-          tokenUrl: https://oauthd.wonka/identity/connect/token
-  x-metadata0: "./metadata/metadata0.yaml"
-servers:
-- url: https://api.wonka.com.br/biscoitos/v3
-info:
-  title: biscoitos
-  version: 1.0.1
-  description: API de biscoitos
-x-metadata0:
-  "$ref": "#/components/x-metadata0"
